@@ -9,13 +9,3 @@ window.addEventListener('scroll', function() {
     img_t.classList.toggle('sc-title', window.scrollY > 0);
     up_arrow.classList.toggle('sc-arrow',window.scrollY > 0);
   });
-let tag= document.getElementById("pr-tag");
-let gg= document.getElementsByClassName("prr");
-function showOverlay(){
-    //tag.style.display="none";
-    gg.style.display="none";
-}
-function hideOverlay(){
-    //tag.style.display="block";
-    gg.style.display="block";
-}
