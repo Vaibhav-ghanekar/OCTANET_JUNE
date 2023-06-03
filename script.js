@@ -38,13 +38,17 @@ window.addEventListener('scroll', function() {
   
   function showBox(){
     dropdown.style.left="0px";
+    dropdown.style.display="block";
+    /*dropdown.style.flexDirection="column";
+    dropdown.style.justifyContent="center";
+    dropdown.style.alignItems="center";
+    */
     dropdown.style.zIndex="2";
-    disableScroll();
   }
   function hideBox(){
     dropdown.style.left="-415px";
     dropdown.style.zIndex="0";
-    enableScroll();
+    dropdown.style.display="none";
   }
   function prompt(){
     alert("Currently working on it!!");
