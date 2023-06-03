@@ -39,15 +39,9 @@ window.addEventListener('scroll', function() {
   function showBox(){
     dropdown.style.left="0px";
     dropdown.style.display="block";
-    /*dropdown.style.flexDirection="column";
-    dropdown.style.justifyContent="center";
-    dropdown.style.alignItems="center";
-    */
-    dropdown.style.zIndex="2";
   }
   function hideBox(){
     dropdown.style.left="-415px";
-    dropdown.style.zIndex="0";
     dropdown.style.display="none";
   }
   function prompt(){
