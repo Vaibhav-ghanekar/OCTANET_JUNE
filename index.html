@@ -4,7 +4,9 @@
 <head>
 	<title>Coffee Shop</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<script src="https://kit.fontawesome.com/4ef16beb9a.js" crossorigin="anonymous"></script>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
@@ -17,12 +19,23 @@
 				<span class="nav-text" id="img-title">Steamy Cups</span>
 			</div>
 			<div class="right-nav">
-				<a href="#hme">Home</a>
-				<a href="#">Product</a>
-				<a href="#">Price</a>
-				<a href="#About">About</a>
+				<a href="#hme"><i class="fa fa-home"></i> Home</a>
+				<a href="#About"><i class="fa fa-question"></i> About</a>
+				<a href="#feeds"><i class="fa fa-comment"></i> Feedback</a>
+				<a href="#"><i class="fa fa-sign-in"></i> Sign in</a>
+				<a href="#" class="menu" id="dropbox" onclick="showBox();"><i class="fa fa-bars"></i></a>
 			</div>
 		</header>
+		<div class="sidebar" id="sidebar">
+			<div class="links">
+				<a href="#hme" onclick="hideBox();"><i class="fa fa-home"></i> Home</a>
+				<a href="#About" onclick="hideBox();"><i class="fa fa-question"></i> About</a>
+				<a href="#feeds" onclick="hideBox();"><i class="fa fa-comment"></i> Feedback</a>
+				<a href="#footer" onclick="hideBox();"><i class="fa fa-phone"></i> Contact Us</a>
+				<a href="#" onclick="hideBox();prompt();"><i class="fa fa-sign-in"></i> Sign in</a>
+			</div>
+			<div class="cross" id="close" onclick="hideBox();"><i class="material-icons">close</i></div>
+		</div>
 		<div class="status">
 			<img src="assets/bean-o.png">
 		</div>
@@ -42,8 +55,8 @@
 						<p>Sip, Savor, and Relax: Your Perfect Coffee Retreat</p>
 					</div>
 					<div id="about">
-						<div class="ab-lg">
-							<div class="ab-lg-cd cd">
+						<div class="ab-lg cd">
+							<div class="ab-lg-cd">
 								<h2>About Us</h2>
 								<p>
 									At Steamy Cups, we are passionate about delivering the finest coffee experience to
@@ -53,15 +66,7 @@
 									and
 									inviting atmosphere where coffee lovers can indulge in their favorite brews.
 								</p>
-								<p>
-									We source our coffee beans directly from small, sustainable farms, ensuring fair
-									trade
-									practices and supporting local growers. Our expert roasters carefully roast the
-									beans to
-									perfection, capturing their distinct characteristics and unlocking their full
-									potential.
-								</p>
-								<p>
+								<p class="hide">
 									Alongside our exceptional coffee selection, we also take pride in our skilled
 									baristas
 									who
@@ -71,7 +76,7 @@
 									experience
 									tailored to your preferences.
 								</p>
-								<p>
+								<p class="hide">
 									Whether you're seeking a cozy spot to relax with a book or need a quick pick-me-up
 									on
 									your
@@ -180,6 +185,20 @@
 					<i class="material-icons" title="Go up">keyboard_double_arrow_up</i>
 				</a>
 			</div>
+			<div class="form-ar" id="feeds">
+				<div class="form-container">
+					<form>
+						<h2>We'd Love to Hear from You</h2>
+						<label for="name">Name</label>
+						<input type="text" required>
+						<label for="Contact">Contact number</label>
+						<input type="number" required>
+						<label for="feedback">Your Feedback</label>
+						<textarea required placeholder="Type your feedback here" cols="70" rows="10"></textarea>
+						<button type="submit">Submit</button>
+					</form>
+				</div>
+			</div>
 		</div>
 	</div>
 	<footer class="footer">
@@ -194,7 +213,8 @@
 				<div class="footer-section contact">
 					<h3 class="footer-heading">Contact Us</h3>
 					<ul class="contact-list">
-						<li><i class="fas fa-map-marker-alt"></i> Lorem ipsum dolor sit amet consectetur adipisicing elit. Et, exercitationem.</li>
+						<li><i class="fas fa-map-marker-alt"></i> Lorem ipsum dolor sit amet consectetur adipisicing
+							elit. Et, exercitationem.</li>
 						<li><i class="fas fa-phone"></i> +91 87********</li>
 						<li><i class="fas fa-envelope"></i> SteamyCups@gmail.com</li>
 					</ul>
@@ -208,7 +228,7 @@
 					</ul>
 				</div>
 			</div>
-			<div class="footer-bottom">
+			<div class="footer-bottom" id="footer">
 				<p class="footer-text">&copy; 2023 Steamy Cups. All rights reserved.</p>
 				<div class="social-media">
 					<a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>

@@ -4,6 +4,10 @@
 	box-sizing: border-box;
 	font-family: Arial, Helvetica, sans-serif;
 }
+::selection{
+	background-color: #00ccff3d;
+	color: rgba(27, 1, 49, 0.582);
+}
 ::-webkit-scrollbar {
     width: 10px;
 }
@@ -60,6 +64,7 @@ header {
 	padding: 0px 70px;
 	width: 100%;
 	transition: all 0.2s ease-in;
+	flex-wrap: wrap;
 }
 
 .left-nav {
@@ -110,16 +115,61 @@ header {
 .right-nav a:hover {
 	background-color: #0f6396;
 }
-
+.right-nav .menu{
+	display: none;
+}
 header.scrolled {
-	background-color: #0a2d42e8;
+	background-color: #0a2d42;
 	backdrop-filter: blur(4px);
 	-webkit-box-shadow: 0px 1px 15px -1px rgba(0, 0, 0, 0.75);
 	-moz-box-shadow: 0px 1px 15px -1px rgba(0, 0, 0, 0.75);
 	box-shadow: 0px 1px 15px -1px rgba(0, 0, 0, 0.75);
 	padding: 0px 10px;
 }
-
+.sidebar{
+	position: absolute;
+	z-index: 0;
+	width: 100%;
+	height: 112vh;
+	left: -415px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	backdrop-filter: blur(2px);
+	align-items: center;
+	transition: all 0.5s ease-in-out;
+	background-color: rgba(255, 255, 255, 0.747);
+}
+.sidebar .links{
+	display: flex;
+	flex-direction: column;
+	justify-content: left;
+	align-items: center;
+	text-align: left;
+	width: 200px;
+}
+.sidebar .links a{
+	text-decoration: none;
+	text-align: left;
+	margin-bottom: 10px;
+	color: #0a2d42;
+	font-size: 18px;
+}
+.sidebar .links a:hover{
+	color: #0f6396;
+}
+.cross{
+	position: absolute;
+	top: 25px;
+	background-color: red;
+	line-height: 10px;
+	z-index: 1;
+	right: 29px;
+	cursor: pointer;
+}
+.cross:hover{
+	color: white;
+}
 .site-content {
 	display: flex;
 	flex-direction: column;
@@ -158,6 +208,7 @@ header.scrolled {
 	100% {
 		transform: translateY(0px);
 		background-color: rgb(214, 210, 210);
+		color: rgb(0, 119, 255);
 	}
 }
 
@@ -223,19 +274,22 @@ header.scrolled {
 #about {
 	margin-top: 20px;
 	display: flex;
-	justify-content: space-between;
+	justify-conent: space-between;
 	padding: 0px 80px;
 }
-
+#abou .cd{
+	width: 50%;
+}
 #about .ab-rg img {
 	width: 370px;
 	height: 450px;
 }
-
 #about .ab-lg-cd {
-	width: 80%;
 	line-height: 22px;
+	overflow: hidden;
+	height: 450px;
 	word-spacing: 5px;
+	width: 70%;
 }
 
 #about .ab-lg-cd p {
@@ -274,7 +328,7 @@ header.scrolled {
 	top: 0px;
 	width: 100%;
 	opacity: 0;
-	border: 1px solid transparent;
+	border: 2px solid transparent;
 	line-height: 25px;
 	height: 250px;
 	padding: 5px;
@@ -287,7 +341,7 @@ header.scrolled {
 
 .inside-card-container .card:hover .overlay {
 	opacity: 1;
-	border: 1px dashed green;
+	border: 2px dashed green;
 	background-color: rgba(255, 255, 255, 0.712);
 	transform: rotate3d(0, 1, 0, 360deg);
 }
@@ -295,7 +349,83 @@ header.scrolled {
 .order-section {
 	width: 100%;
 }
+/*Form Styling*/
 
+.form-ar{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: white;
+	width: 100%;
+	height: 600px;
+	margin: auto;
+	margin-top: 50px;
+	flex-direction: column;
+	transition: all 0.2s ease-in;
+}
+.form-ar h2{
+	text-align: center;
+	margin-bottom: 15px;
+}
+.form-container{
+	background-image: url('https://img.freepik.com/free-vector/restaurant-mural-wallpaper_52683-47493.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	border-top-left-radius: 30px;
+	border-bottom-right-radius: 30px;
+}
+.form-ar form{
+	display: flex;
+	flex-direction: column;
+	padding: 20px 70px;
+	margin-bottom: 30px;
+	backdrop-filter: blur(1px);
+	border-top-left-radius: 30px;
+	border-bottom-right-radius: 30px;
+}
+.form-ar form input{
+	background-color: transparent;
+	outline: none;
+	border: none;
+	border-bottom: 2px solid rgb(80, 80, 80);
+	margin-bottom: 20px;
+	transition: all 0.2s ease-in;
+}
+label{
+	font-size: 17px;
+}
+.form-ar form input[type="number"],
+.form-ar form input[type="text"]{
+	font-size: 16px;
+	padding: 10px 5px;
+	color: white;
+}
+.form-ar form input:focus{
+	border-color: rgb(194, 41, 41);
+}
+.form-ar form textarea{
+	font-size: 16px;
+	padding: 10px 5px;
+	margin-top: 10px;
+	outline: none;
+	resize:none;
+	text-overflow: clip;
+	word-spacing: 7px;
+	background-color: rgba(255, 255, 255, 0.781);
+}
+.form-ar form button{
+	padding: 10px;
+	margin-top: 5px;
+	background-color: rgba(167, 255, 226, 0.199);
+	border: none;
+	font-size: 15px;
+	font-weight: 600;
+	color: white;
+	letter-spacing: 2px;
+}
+.form-ar form button:hover{
+	background-color: rgba(167, 255, 226, 0.281);
+}
 /* Footer Styles */
 .footer {
 	background-color: #0a2d42e8;
@@ -318,6 +448,8 @@ header.scrolled {
 .footer-section {
 	width: 30%;
 	margin-bottom: 20px;
+	background-color: rgba(255, 255, 255, 0.062);
+	padding: 20px;
 }
 
 .footer-heading {
@@ -374,4 +506,108 @@ header.scrolled {
 }
 .social-media .social-link:hover{
 	color: rgb(194, 194, 194);
+}
+/*Responsive design for iphone XR or below*/
+
+@media screen and (max-width: 414px){
+	header{
+		padding: 0px 10px;
+	}
+	.left-nav img{
+		width: 35px;
+		height: 35px;
+	}
+	.left-nav .nav-text{
+		font-size: 14px;
+	}
+	.wel-cd{
+		padding: 15px;
+	}
+	.wel-cd p{
+		top: 5px;
+		font-size: 14px;
+	}
+	#about {
+		padding: 0px 10px;
+	}
+	#about .ab-rg img {
+		width: 200px;
+		height: 250px;
+	}
+	#about .ab-lg-cd {
+		height: 300px;
+		word-spacing: 5px;
+		width: 100%;
+	}
+	#about .ab-lg-cd p,
+	.inside-card-container .card .overlay p {
+		font-size: 12px;
+	}
+	.hide{
+		display: none;
+	}
+	.inside-card-container .card img,.inside-card-container .card .overlay{
+		height: 200px;
+	}
+	.inside-card-container .card{
+		width: 250px;
+	}
+	#about h2,
+	.card-container h1{
+		font-size: 20px;
+	}
+	.inside-card-container .card h2{
+		font-size: 18px;
+	}
+	.form-ar form{
+		padding: 10px 20px;
+	}
+	.form-ar h2
+	{
+		font-size: 15px;
+	}
+	.form-ar form textarea{
+		width: 300px;
+		height: 100px;
+		font-size: 10px;
+		overflow: scroll;
+	}
+	label,.form-ar form button{
+		font-size: 12px;
+	}
+	.form-ar form input[type="number"],
+    .form-ar form input[type="text"]{
+		font-size: 10px;
+		padding-bottom: 3px;
+	}
+	.site-content .image-content .overlay h1,
+	.inside-card-container .card h3{
+		font-size: 16px;
+	}
+	.status img{
+		width: 100px;
+		height: 100px;
+	}
+	.status img:hover{
+		width: 120px;
+		height: 120px;
+	}
+	.right-nav a{
+		display: none;
+	}
+	.right-nav .menu{
+		display: block;
+	}
+	.footer-content{
+		justify-content: center;
+	}
+	.footer-section{
+		width: 400px;
+	}
+	.footer-bottom p{
+		font-size: 11px;
+	}
+	.social-media .social-link{
+		font-size: 15px;
+	}
 }
