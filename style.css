@@ -528,13 +528,17 @@ label{
 		padding: 0px 10px;
 	}
 	#about .ab-rg img {
-		width: 200px;
-		height: 250px;
+		width: 150px;
+		height: 200px;
 	}
 	#about .ab-lg-cd {
-		height: 300px;
+		height: 200px;
 		word-spacing: 5px;
 		width: 100%;
+		line-height: 18px;
+	}
+	#about .ab-lg-cd p {
+		margin-top: 5px;
 	}
 	#about .ab-lg-cd p,
 	.inside-card-container .card .overlay p {
@@ -606,5 +610,21 @@ label{
 	}
 	.social-media .social-link{
 		font-size: 15px;
+	}
+	.wel-cd p {
+		animation: hor-scroll 7s linear infinite;
+	}
+	@keyframes hor-scroll {
+		0% {
+			left: 100%;
+		}
+	
+		50% {
+			color: rgba(2, 81, 155, 0.89);
+		}
+	
+		100% {
+			left: -82%;
+		}
 	}
 }
